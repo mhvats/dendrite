@@ -1,0 +1,19 @@
+.menu-container{
+    border-left: 3px solid whitesmoke;
+}
+#menu-icon{
+    opacity: 0.75;
+    cursor: pointer;
+}
+#menu-title{
+    opacity: 0.75;
+    cursor: pointer;
+}
+#menu-icon2{
+    opacity: 1;
+    cursor: pointer;
+}
+#menu-title2{
+    opacity: 1;
+    cursor: pointer;
+}

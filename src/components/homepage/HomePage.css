@@ -1,0 +1,15 @@
+.homepage-container{
+/* width: 100%; */
+max-width: 1313px;
+}
+.homepage-img-container {
+    text-align: center;
+    border: 1px solid red;
+    height: 20vh;
+}
+.song-tile-heading{
+    border: 1px solid green;
+}
+.song-tile-component{
+    overflow: auto;
+}

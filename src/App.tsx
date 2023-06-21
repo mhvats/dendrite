@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { Sidebar } from './components/sidebar/Sidebar';
+import { HomePage } from './components/homepage/HomePage';
 
-interface Props {
-  name ?:string;
-}
-
-const App: React.FunctionComponent<Props> = (props) => {
+const App: React.FC = () => {
   return(
     <>
-    <div>
+    <div className='d-flex'>
       <Sidebar />
+      <HomePage />
     </div>
     </>
   ) ;

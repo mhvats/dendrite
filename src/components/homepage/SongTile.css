@@ -1,0 +1,13 @@
+.song-tile-container{
+    /* border: 1px solid black; */
+    cursor: pointer;
+}
+.song-tile-cover{
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+.song-tile-title{
+    line-height: 1.3;
+}

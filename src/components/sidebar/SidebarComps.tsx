@@ -6,23 +6,19 @@ interface Props {
   onClick: () => void;
 }
 
-export const SidebarComps: React.FunctionComponent<Props> = ({
-  title,
-  onClick,
-  Icon,
-}) => {
+export const SidebarComps: React.FC<Props> = ({ title, onClick, Icon }) => {
   const handleClick = () => {
     onClick();
   };
   return (
     <>
       <div className="d-flex align-items-center my-2 menu-container">
-        <div className=" px-5" style={{ cursor: "pointer" }}>
+        <div className=" px-3" style={{ cursor: "pointer" }}>
           {Icon && <Icon />}
         </div>
         <div>
           <h2
-            className=""
+            className="px-2"
             id="menu-title menu-title2"
             onClick={handleClick}
             style={{ cursor: "pointer" }}

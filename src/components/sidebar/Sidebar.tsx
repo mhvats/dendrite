@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
 
-export const Sidebar: React.FunctionComponent = () => {
+export const Sidebar: React.FC = () => {
   //   const [iconContainer, setIconContainer] = React.useState<string>("menu-icon");
   //   const [titleContainer, setTitleContainer] =
   //     React.useState<string>("menu-title");
@@ -25,7 +25,7 @@ export const Sidebar: React.FunctionComponent = () => {
   return (
     <>
       <div
-        className="text-white d-flex flex-column w-25 justify-content-center"
+        className="text-white d-flex flex-column justify-content-center"
         style={{ height: "100vh", backgroundColor: "#5b3ede" }}
       >
         <SidebarComps

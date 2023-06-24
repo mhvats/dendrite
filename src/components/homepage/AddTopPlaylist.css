@@ -1,0 +1,18 @@
+.add-to-playlist{
+    background-color: white;
+    position: absolute;
+    top: 250px;
+    left: 700px;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 170px;
+    height: 100px
+}
+.create-new{
+    cursor: pointer;
+}
+.existing-playlist{
+    cursor: pointer;
+}

@@ -1,28 +1,31 @@
-import { FC, useState } from "react";
+import React, { FC, useState } from "react";
 import "./HomePage.css";
 import { Data } from "../../Data";
 import { SongTile } from "./SongTile";
 import { FavSongTile } from "./FavsongTile";
 import { AddToPlaylistTile } from "./AddToPlaylistTile";
+import { CreateNewPlaylist } from "./CreateNewPlaylist";
 export const HomePage: FC = () => {
   const [favSongArray, setFavSongArray] = useState<number[]>([]);
   const [playlistArray, setPlaylistArray] = useState<number[]>([]);
   const [addToPlaylist, setAddToPlaylist] = useState<boolean>(false);
+  const [createNewPlaylist, setCreateNewPlaylist] = useState<boolean>(false);
   const onAddFav = (id: number, e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
     setFavSongArray((prevState: number[]) => [...prevState, id]);
-    console.log(favSongArray);
+    // console.log(favSongArray);
   };
   const onAddPlaylist = (
     id: number,
     e: React.MouseEvent<Element, MouseEvent>
   ) => {
+    e.stopPropagation();
     setAddToPlaylist((prevState) => {
       return !prevState;
     });
-    e.stopPropagation();
+    console.log(addToPlaylist);
     setPlaylistArray((prevState: number[]) => [...prevState, id]);
-    console.log(playlistArray);
+    // console.log(playlistArray);
   };
   const renderedSongs = Data.map((song) => (
     <SongTile
@@ -39,6 +42,25 @@ export const HomePage: FC = () => {
     <FavSongTile key={song.id} id={song.id} title={song.title} />
   ));
 
+  const onAddNewPlaylist = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+    setCreateNewPlaylist((prevState) => {
+      return !prevState;
+    });
+  };
+  const onAddExistingPlaylist = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+    setAddToPlaylist((prevState) => {
+      return !prevState;
+    });
+  };
+  const onClosePlaylist = (e: React.MouseEvent<Element, MouseEvent>) => {
+    e.stopPropagation();
+    setCreateNewPlaylist((prevState) => {
+      return !prevState;
+    });
+    console.log("closing is working");
+  };
   return (
     <div className="homepage-container">
       <div className="homepage-img-container">
@@ -50,7 +72,15 @@ export const HomePage: FC = () => {
         </div>
         <div className="song-tile-component d-flex">{renderedSongs}</div>
         <div className="fav-song-tile-component d-flex">{renderFavSongs}</div>
-        {addToPlaylist ? <AddToPlaylistTile /> : null}
+        {addToPlaylist ? (
+          <AddToPlaylistTile
+            onAddNewPlaylist={onAddNewPlaylist}
+            onAddExistingPlaylist={onAddExistingPlaylist}
+          />
+        ) : null}
+        {createNewPlaylist ? (
+          <CreateNewPlaylist onClosePlaylist={onClosePlaylist} />
+        ) : null}
       </div>
     </div>
   );

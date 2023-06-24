@@ -11,25 +11,25 @@ export const SongTile: FC<Props> = ({ title, id, onAddFav, onAddPlaylist }) => {
   const [menu, setMenu] = useState<boolean>(false);
   const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
-    console.log("Tile has been clicked");
+    // console.log("Tile has been clicked");
   };
   const handleMenuClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
     setMenu((prevState) => {
       return !prevState;
     });
-    console.log(menu);
+    // console.log(menu);
   };
   const handleAddToFavClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
     onAddFav(id, e);
     setMenu(false);
-    console.log(`Fav added ${id}`);
+    // console.log(`Fav added ${id}`);
     // console.log(favSongArray);
   };
   const handleAddToPlaylist = (e: React.MouseEvent<Element, MouseEvent>) => {
     e.stopPropagation();
-    console.log(`Playlist added ${id}`);
+    // console.log(`Playlist added ${id}`);
     onAddPlaylist(id, e);
     setMenu(false);
   };
